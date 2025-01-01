@@ -1,0 +1,644 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fond Animé Ultra Stylé</title>
+    <style>
+        /* Définir le fond de la page */
+        body, html {
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            padding-bottom: 100px
+            display:flex;
+            align-items:center;
+        }
+        /* Fond animé avec dégradé en mouvement */
+        .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffd700, #dda0dd); /* Jaune et Violet clair */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: -1;
+}
+/* Animation du dégradé */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+        /* Animations pour les particules */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            opacity: 0.5;
+            animation: floatParticle 10s infinite ease-in-out;
+        }
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-200px) rotate(360deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        /* Styles des objets flottants */
+        .floating-object {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            animation: floatObject 5s ease-in-out infinite;
+        }
+        /* Animation de flottement des objets */
+        @keyframes floatObject {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-100px) rotate(45deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        /* Animations pour les particules en mouvement */
+        .particle-one {
+            width: 10px;
+            height: 10px;
+            top: 30%;
+            left: 20%;
+            animation-duration: 10s;
+        }
+        .particle-two {
+            width: 12px;
+            height: 12px;
+            top: 70%;
+            left: 50%;
+            animation-duration: 12s;
+        }
+        .particle-three {
+            width: 8px;
+            height: 8px;
+            top: 10%;
+            left: 80%;
+            animation-duration: 15s;
+        }
+             h1 {
+      position: center ;
+      margin-top: 50px; /* Espace au-dessus du titre */
+      font-family: sans-serif;
+      text-transform: uppercase;
+      font-size: 3em; /* Augmentation de la taille du texte */
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, #000, #fff, #000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: rgba(255, 255, 255, 0);
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      animation: anime 2s infinite linear ;
+      border: 5px solid #03e9f4; /* Encadré autour du titre */
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 30px; /* Espacement sous le titre */
+      text-align: center;
+       display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+             
+    }
+    @keyframes anime {
+      0% {
+        background-position: -500%;
+      }
+      100% {
+        background-position: 500%;
+      }
+    }
+    /* Style des boutons animés avec bordures lumineuses */
+    a {
+      position: relative;
+      display: inline-block;
+      padding: 20px 30px;
+      margin: 20px;
+      color: #03e9f4;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 16px;
+      letter-spacing: 3px;
+      overflow: hidden;
+      transition: 0.5s ease;
+    }
+    a:hover {
+      background: #03e9f4;
+      color: #000;
+      box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+    }
+    /* Style animé pour les bordures */
+    a span {
+      position: absolute;
+      display: block;
+    }
+    a span:nth-child(1) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      z-index: 22;
+      background: linear-gradient(90deg, transparent, #03e9f4);
+      animation: animate1 1s linear infinite;
+    }
+    @keyframes animate1 {
+      0% {
+        left: -100%;
+      }
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+    a span:nth-child(2) {
+      position: fixed;
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      z-index: 22;
+      background: linear-gradient(180deg, transparent, #03e9f4);
+      animation: animate2 1s linear infinite;
+      animation-delay: 0.25s;
+    }
+    @keyframes animate2 {
+      0% {
+        top: -100%;
+      }
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+    a span:nth-child(3) {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      z-index: 22;
+      background: linear-gradient(270deg, transparent, #03e9f4);
+      animation: animate3 1s linear infinite;
+      animation-delay: 0.5s;
+    }
+    @keyframes animate3 {
+      0% {
+        right: -100%;
+      }
+      50%,
+      100% {
+        right: 100%;
+      }
+    }
+    a span:nth-child(4) {
+      position: fixed;
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      z-index: 22;
+      background: linear-gradient(360deg, transparent, #03e9f4);
+      animation: animate3 1s linear infinite;
+      animation-delay: 0.5s;
+    }
+    @keyframes animate4 {
+      0% {
+        bottom: -100%;
+      }
+      50%,
+      100% {
+        bottom: 100%;
+      }
+    }
+    /* Couleurs différentes pour chaque bouton */
+    a:nth-child(1) {
+      filter: hue-rotate(0deg);
+    }
+    a:nth-child(2) {
+      filter: hue-rotate(90deg);
+    }
+    a:nth-child(3) {
+      filter: hue-rotate(180deg);
+    }
+    a:nth-child(4) {
+      filter: hue-rotate(270deg);
+    }
+    a:nth-child(5) {
+      filter: hue-rotate(45deg);
+    }
+    a:nth-child(6) {
+      filter: hue-rotate(300deg);
+    }
+    a:nth-child(7) {
+      filter: hue-rotate(290deg);
+    }
+    /* Style pour les paragraphes */
+    .content {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2em; /* Taille du texte raisonnable */
+      line-height: 1.5; /* Espacement agréable entre les lignes */
+      max-width: 600px;
+      text-align: center; /* Alignement à gauche */
+      margin-bottom: 20px;
+      padding: 15px; /* Espace autour du texte */;
+      background-color:rgba(0,0,0,0.1); /* Fond clair pour contraste */
+      border-radius: 10px; /* Coins arrondis */
+      color: black; /* Texte noir, couleur normale */
+      justify-content:center;
+      text-align: center;
+    }
+    img{
+        width:100px
+        top :40%
+    }
+    
+       h4{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: rgba(0, 0, 0, 0); /* Fond transparent */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Ombre lumineuse */
+            animation: pulseGlow 2s infinite alternate; /* Animation de pulsation lumineuse sur la barre */
+        }
+        /* Animation pour un effet lumineux sur la barre */
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.3), 0 0 20px rgba(0, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.9), 0 0 45px rgba(0, 255, 255, 1);
+            }
+        }
+        /* Style du contenu dans la barre */
+         
+        .bottom-bar {
+    background-image: url('https://t4.ftcdn.net/jpg/00/87/51/71/360_F_87517185_TnJGDTGa3PKJKvakVdw6ExM5fggHO4mi.jpg '); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste l'image pour couvrir toute la zone */
+    background-position: center; /* Centrer l'image */
+    height: 200px; /* Hauteur de la barre, ajustez selon vos besoins */
+}
+
+.bottom-bar-content {
+    color: white; /* Texte en blanc */
+    font-size: 18px; /* Taille de police de 18px */
+    text-align: center; /* Centrer le texte */
+    padding: 20px; /* Ajouter un peu de padding pour espacer le texte */
+    background-size:contain ;
+    height:100px ;}
+        /* Icône animée avec un effet lumineux */
+        .bottom-bar img {
+            width: 40px;
+            margin-right: 15px;
+            animation: rotateGlow 5s infinite linear;
+        }
+        /* Animation pour l'icône avec effet lumineux */
+        @keyframes rotateGlow {
+            0% {
+                transform: rotate(0deg);
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            }
+            100% {
+                transform: rotate(360deg);
+                box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+            }
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <!-- Contenu principal -->
+      <h1 class="title"> حج الإفراد</h1>
+  <!-- Boutons dans l'ordre corrigé -->
+  <a href="#" onclick="toggleContent(1)">
+    <span></span><span></span>
+    <span></span><span></span>
+    تعريف حج الإفراد
+  </a>
+  <div id="content1" class="content">
+    <p ><h1>تعريف حج الإفراد</h1><strong>لغةً:</strong> الإفراد مأخوذ من "الفرد"، بمعنى الانفراد<br><strong>صطلاحاً:</strong> هو أحد أنواع الحج الثلاثة، حيث ينوي الحاج أداء الحج فقط دون الجمع بينه وبين العمرة، ويقول عند الإحرام: "لبيك حجاً".</p>
+  </div>
+  <a href="#" onclick="toggleContent(2)">
+    <span></span><span></span>
+    <span></span><span></span>
+    حكمه
+  </a>
+  <div id="content2" class="content">
+    <h1>:حكمه</h1>
+واجب: حج الإفراد هو فرض عين على المسلم القادر، كما ورد في قوله تعالى:
+{وَأَذِّنْ فِي النَّاسِ بِالْحَجِّ يَأْتُوكَ رِجَالًا وَعَلَى كُلِّ ضَامِرٍ يَأْتِينَ مِن كُلِّ فَجٍّ عَمِيقٍ لِّيَشْهَدُوا مَنَافِعَ لَهُمْ وَيَذْكُرُوا اسْمَ اللَّهِ فِي أَيَّامٍ مَّعْلُومَاتٍ}(الحج: 27).<br><br>
+هذه الآية تدل على وجوب الحج على المسلم المستطيع.
+سنة مؤكدة: بالنسبة للذين لم يؤدوا حجًا من قبل ولم يقوموا بعمل نية خاصة (مثل التمتع أو القران) فإنهم يمكنهم أداء حج الإفراد، وهو مذكور في سنة النبي صلى الله عليه وسلم الذي حج مفردًا..</p>
+  </div>
+  <a href="#" onclick="toggleContent(3)">
+    <span></span><span></span>
+    <span></span><span></span>
+    حجيته
+  </a>
+  <div id="content3" class="content">
+    <p><H1>حجيته</H1>
+      من القرآن الكريم:
+قوله تعالى:
+{وَأَتِمُّوا الْحَجَّ وَالْعُمْرَةَ لِلَّهِ} (البقرة: 196).
+هذه الآية تدل على مشروعية الحج والعمرة، وتُفسر بأنها تشمل جميع أنواع الحج ومنها الإفراد.
+<br><br>
+قوله تعالى:
+{وَأَذِّنْ فِي النَّاسِ بِالْحَجِّ يَأْتُوكَ رِجَالًا} (الحج: 27).
+الأمر يشمل الحث على أداء الحج بأنواعه المختلفة.
+<br><br>
+<b><u>من السنة النبوية:</u></b>
+<br>حديث عائشة رضي الله عنها:
+"خرجنا مع رسول الله صلى الله عليه وسلم عام حجة الوداع... فمنهم من أهل بحج، ومنهم من أهل بعمرة وحج، ومنهم من أهل بعمرة، وأهلّ النبي صلى الله عليه وسلم بالحج." (صحيح مسلم).
+يثبت هذا الحديث أن النبي صلى الله عليه وسلم حج مفرداً.
+
+حديث جابر رضي الله عنه:
+"قدم النبي صلى الله عليه وسلم صباح رابعة مضجعاً في خيمته حتى زالت الشمس، ثم خرج إلى المسجد وطاف طواف القدوم." (رواه مسلم).
+يُظهر الحديث خطوات الإفراد التي قام بها النبي صلى الله عليه وسلم.
+
+</p>
+  </div>
+  <a href="#" onclick="toggleContent(4)">
+    <span></span><span></span>
+    <span></span><span></span>
+    كيفيه أدائه
+  </a>
+  <div id="content4" class="content">
+    <p> <h1>مراحل الحج</h1>
+
+    <!-- المرحلة الأولى -->
+    <div class="stage">
+        <h2>المرحلة الأولى: الإحرام</h2>
+        <h3>1. الإحرام من الميقات:</h3>
+        <ul>
+            <li>الحاج يحرم من الميقات المخصص له (حسب موقعه).</li>
+            <li>يلبس ملابس الإحرام (الإزار والرداء للرجل، والمرأة تلبس ما شاءت دون تغطية الوجه والكفين).</li>
+            <li>ينوي الحاج عند الإحرام الحج فقط، ويقول: "لبيك حجاً"، أو "لبيك اللهم حجاً".</li>
+            <li>
+                يبدأ بالتلبية بعد الإحرام مباشرة:
+                <q>لبيك اللهم لبيك، لبيك لا شريك لك لبيك، إن الحمد والنعمة لك والملك، لا شريك لك</q>،
+                ويكررها حتى يصل إلى مكة.
+            </li>
+        </ul>
+        <h3>2. الالتزام بمناسك الإحرام:</h3>
+        <ul>
+            <li>إزالة الشعر أو تقليم الأظافر.</li>
+            <li>استخدام العطور.</li>
+            <li>لبس المخيط (للرجال).</li>
+            <li>تغطية الرأس (للرجال) أو الوجه (للنساء).</li>
+            <li>الجماع أو مقدماته.</li>
+        </ul>
+    </div>
+
+    <!-- المرحلة الثانية -->
+    <div class="stage">
+        <h2>المرحلة الثانية: دخول مكة والطواف</h2>
+        <h3>1. طواف القدوم:</h3>
+        <ul>
+            <li>عند الوصول إلى مكة، يتوجه الحاج إلى المسجد الحرام.</li>
+            <li>يطوف سبعة أشواط حول الكعبة، يبدأ كل شوط من الحجر الأسود وينتهي به، مع التكبير عند كل مرور به.</li>
+            <li>يُسنّ له أن يستلم الحجر الأسود ويقبّله إن استطاع، وإن لم يستطع، يشير إليه بيده دون تقبيل.</li>
+            <li>يذكر الله ويدعو خلال الطواف.</li>
+        </ul>
+        <h3>2. صلاة ركعتين:</h3>
+        <ul>
+            <li>بعد الطواف، يصلي الحاج ركعتين خلف مقام إبراهيم إذا تيسر، وإلا في أي مكان في المسجد الحرام.</li>
+            <li>يقرأ في الركعة الأولى: {قُلْ يَا أَيُّهَا الْكَافِرُونَ}، وفي الثانية: {قُلْ هُوَ اللَّهُ أَحَدٌ}.</li>
+        </ul>
+        <h3>3. شرب ماء زمزم:</h3>
+        <p>يُسنّ للحاج شرب ماء زمزم بعد الصلاة والدعاء بما يشاء.</p>
+        <h3>4. السعي بين الصفا والمروة (اختياري الآن):</h3>
+        <p>يمكن للحاج تأخير السعي إلى ما بعد طواف الإفاضة.</p>
+    </div>
+
+    <!-- المرحلة الثالثة -->
+    <div class="stage">
+        <h2>المرحلة الثالثة: يوم عرفة (اليوم التاسع من ذي الحجة)</h2>
+        <h3>1. الخروج إلى عرفة:</h3>
+        <p>بعد شروق شمس اليوم التاسع، يتوجه الحاج إلى عرفة.</p>
+        <h3>2. الدعاء في عرفة:</h3>
+        <p>يكثر الحاج من الدعاء، التهليل، التكبير، والاستغفار، ويقول: 
+            <q>لا إله إلا الله وحده لا شريك له، له الملك وله الحمد، وهو على كل شيء قدير</q>.
+        </p>
+        <h3>3. صلاة الظهر والعصر جمعاً وقصراً:</h3>
+        <p>يصلي الظهر والعصر جمع تقديم وقصراً (ركعتين لكل صلاة) في وقت الظهر، مع خطبة يلقيها الإمام.</p>
+        <h3>4. الوقوف بعرفة:</h3>
+        <p>الوقوف بعرفة ركن أساسي من أركان الحج، ويجب البقاء حتى غروب الشمس.</p>
+    </div>
+
+    <!-- المرحلة الرابعة -->
+    <div class="stage">
+        <h2>المرحلة الرابعة: المبيت بمزدلفة</h2>
+        <ul>
+            <li>التوجه إلى مزدلفة بعد غروب شمس يوم عرفة.</li>
+            <li>جمع صلاتي المغرب والعشاء جمع تأخير في مزدلفة، مع قصر العشاء إلى ركعتين.</li>
+            <li>المبيت في مزدلفة حتى الفجر.</li>
+            <li>جمع سبع حصيات لرمي جمرة العقبة الكبرى في اليوم التالي.</li>
+        </ul>
+    </div>
+
+    <!-- المرحلة الخامسة -->
+    <div class="stage">
+        <h2>المرحلة الخامسة: يوم النحر (اليوم العاشر من ذي الحجة)</h2>
+        <ul>
+            <li>رمي جمرة العقبة الكبرى بسبع حصيات متتاليات، مكبراً مع كل حصاة.</li>
+            <li>ذبح الهدي (اختياري للحاج المفرد).</li>
+            <li>الحلق أو التقصير (الحلق أفضل للرجال).</li>
+            <li>طواف الإفاضة، وأداء السعي إذا لم يكن قد سعى بعد طواف القدوم.</li>
+        </ul>
+    </div>
+
+    <!-- المرحلة السادسة -->
+    <div class="stage">
+        <h2>المرحلة السادسة: أيام التشريق (11، 12، و13 ذي الحجة)</h2>
+        <ul>
+            <li>رمي الجمرات الثلاث (الصغرى، الوسطى، الكبرى).</li>
+            <li>الدعاء بعد الجمرة الصغرى والوسطى.</li>
+            <li>التعجل بمغادرة منى بعد اليوم الثاني عشر لمن أراد.</li>
+        </ul>
+    </div>
+
+    <!-- المرحلة السابعة -->
+    <div class="stage">
+        <h2>المرحلة السابعة: طواف الوداع</h2>
+        <ul>
+            <li>أداء طواف الوداع قبل مغادرة مكة.</li>
+            <li>الانصراف إلى بلده، وينهي حجه.</li>
+        </ul>
+    </div>
+
+    <!-- ملاحظات -->
+    <div class="important-note">
+        <h3>ملاحظات هامة:</h3>
+        <ul>
+            <li>الالتزام بآداب الحج والدعاء في كل مناسك الحج.</li>
+            <li>التوجه بالدعاء والتضرع إلى الله في كل مراحل الحج.</li>
+            <li>المحافظة على الهدوء وعدم إيذاء الآخرين أثناء أداء المناسك.</li>
+        </ul>
+    </div></p>
+  </div>
+  <a href="#" onclick="toggleContent(5)">
+    <span></span><span></span>
+    <span></span><span></span>
+    شروطه
+  </a>
+  <div id="content5" class="content">
+    <p><H1>شروطه</H1>
+      <b><u> الإسلام:</u></b> الحج لا يجب إلا على المسلم
+<br><b><u>العقل:</u></b>يشترط العقل؛ فلا يجب على المجنون.
+<br><b><u>البلوغ:</u></b>لا يجب الحج على الصغير.
+<br><b><u>الاستطاعة:</u></b>القدرة المالية والجسدية.
+<br><b><u>النية:</u></b> نية الإفراد عند الإحرام.
+<br><b><u> عدم الجمع مع العمرة:</u></b>أن تكون النية للحج فقط دون إدخال العمرة فيه.
+    </p>
+  </div>
+  <a href="#" onclick="toggleContent(6)">
+    <span></span><span></span>
+    <span></span><span></span>
+    فوائده
+  </a>
+  <div id="content6" class="content">
+    <p><H1>فوائده</H1>
+      <b><u>التفرغ للحج: </u></b>يركز الحاج على مناسك الحج فقط
+       <br><b><u> تخفيف التكاليف:</u></b>لا يلزم الهدي، مما يجعله أقل تكلفة.
+       <br><b><u>اتباع سنة النبي صلى الله عليه وسلم:</u></b>ثبت عن النبي صلى الله عليه وسلم أنه حج مفرداً.
+       <br><b><u>سهولة الأداء:</u></b> يعتبر الإفراد أبسط أنواع الحج.
+       <br><b><u>مناسب للقريبين من مكة:</u></b>يمكنهم أداء العمرة في وقت آخر.
+
+    </p>
+  </div>
+  <a href="#" onclick="toggleContent(7)">
+    <span></span><span></span>
+    <span></span><span></span>
+    الفرق بين حج الإفرادو حج التمتع وحج القِران
+  </a>
+  <div id="content7" class="content">
+    <p>  <div class="container">
+        <h1>الفرق بين حج الإفراد وحج التمتع وحج القِران</h1>
+
+        <div class="section">
+            <h2>النية وطريقة الإحرام</h2>
+            <ul>
+                <li><strong>حج الإفراد:</strong> يُحرم الحاج بنية الحج فقط. يبدأ الإحرام للحج ولا يدخل العمرة في خطته.</li>
+                <li><strong>حج التمتع:</strong> يبدأ الحاج بالإحرام للعمرة أولاً، ثم يتحلل منها ليُحرم مرة أخرى للحج.</li>
+                <li><strong>حج القِران:</strong> يُحرم الحاج بنية الجمع بين العمرة والحج في إحرام واحد، ولا يتحلل من إحرامه طوال المناسك.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>الهدي</h2>
+            <ul>
+                <li><strong>حج الإفراد:</strong> لا يُلزَم الحاج بذبح الهدي. الهدي اختياري.</li>
+                <li><strong>حج التمتع:</strong> يُلزَم الحاج بهدي لأن الحاج يأتي بالعمرة أولاً ثم يحرم مرة أخرى للحج.</li>
+                <li><strong>حج القِران:</strong> يُلزَم الحاج بهدي لأنه يؤدي العمرة أولاً ويظل في إحرامه حتى انتهاء الحج.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>التكاليف والمشقة</h2>
+            <ul>
+                <li><strong>حج الإفراد:</strong> هو الأقل تكلفة، حيث لا يتطلب الهدي الإلزامي أو الكثير من المناسك المعقدة.</li>
+                <li><strong>حج التمتع:</strong> أكثر تكلفة لأنه يتطلب الهدي وأداء العمرة أولاً ثم الحج بعد التحلل.</li>
+                <li><strong>حج القِران:</strong> الأكثر تعقيداً من حيث التكلفة والمشقة، حيث يُلزَم الحاج بالهدي ولا يتحلل من الإحرام طوال المناسك.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>كيفية أداء المناسك</h2>
+            <ul>
+                <li><strong>حج الإفراد:</strong> الحاج يؤدي الحج فقط، ويمكنه تأخير السعي إلى ما بعد طواف الإفاضة.</li>
+                <li><strong>حج التمتع:</strong> يبدأ بالعمرة أولاً ثم يتحلل، ثم يُحرم مرة أخرى للحج.</li>
+                <li><strong>حج القِران:</strong> يؤدي العمرة أولاً دون أن يتحلل، ويبقى في إحرامه حتى ينتهي من مناسك الحج.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>سهولة المناسك</h2>
+            <ul>
+                <li><strong>حج الإفراد:</strong> يعتبر أسهل أنواع الحج حيث يشمل الحج فقط ولا يتطلب أداء العمرة أو التحلل.</li>
+                <li><strong>حج التمتع:</strong> أسهل من القِران ولكنه يتطلب التحلل بين العمرة والحج.</li>
+                <li><strong>حج القِران:</strong> هو الأكثر تعقيداً من حيث الإجراءات والمناسك لأنه لا يتم التحلل بين العمرة والحج.</li>
+            </ul>
+        </div>
+
+        <h2>الختام </h2>
+        <p>
+             <B>حج الإفراد:</B>  هو الأسهل والأقل تكلفة، حيث يقتصر على الحج فقط ولا يتطلب الهدي الإلزامي. 
+             <BR>
+              <B>حج التمتع:</B> يشمل العمرة أولاً ثم الحج بعد التحلل، ويتطلب الهدي. 
+              <BR>
+             <B>حج القِران:</B> يشمل العمرة والحج في إحرام واحد ويُلزَم بذبح الهدي.
+               <b>حج القران:</b> يشمل العمرة و الحج في احرام واحد دون التحلل بينهما و يتطلب الهدي ايضا
+        </p>
+    </div>.</p>
+  </div>
+  <script>
+    // Fonction pour afficher/masquer le paragraphe au clic
+    function toggleContent(id) {
+      const content = document.getElementById('content' + id);
+      content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+    <!-- Particules animées -->
+    <div class="particle particle-one"></div>
+    <div class="particle particle-two"></div>
+    <div class="particle particle-three"></div>
+    <!-- Objets flottants -->
+    <div class="floating-object" style="top: 20%; left: 10%;"></div>
+    <div class="floating-object" style="top: 60%; left: 30%;"></div>
+    <div class="floating-object" style="top: 40%; left: 70%;"></div>
+    <!-- Barre fixe en bas -->
+    
+     
+     <h4 class="bottom-bar">
+        <div class="bottom-bar-content">
+            <p>2 AS 1 </p>
+        </div>
+    </div> </h4>
+    <audio id="mon-audio" autoplay loop>
+  
+</script>
+</body>
+</html>
